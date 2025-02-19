@@ -2,9 +2,14 @@ import { PiSuitcaseBold } from "react-icons/pi";
 import { FaRegEdit, FaRegFolder } from "react-icons/fa";
 import { FiHome, FiTool } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const Navbar = ({ onScroll }) => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
   // Variants for animation
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,21 +29,53 @@ const Navbar = ({ onScroll }) => {
 
   // OnClick functions for individual icons
   const handleHomeClick = () => {
-    onScroll("home");
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      onScroll("home");
+    } else {
+      // If on another page, navigate to home page
+      navigate("/");
+    }
   };
 
+
   const handleProjectClick = () => {
-    onScroll("project");
+
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      onScroll("project");
+    } else {
+      // If on another page, navigate to home page
+      navigate("/", { state: { scrollTo: "project" }});
+    }
   };
 
   const handleExperienceClick = () => {
-    onScroll("experience");
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      onScroll("experience");
+    } else {
+      // If on another page, navigate to home page
+      navigate("/", { state: { scrollTo: "experience" }});
+    }
   };
   const handleToolsClick = () => {
-    onScroll("tools");
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      onScroll("tools");
+    } else {
+      // If on another page, navigate to home page
+      navigate("/", { state: { scrollTo: "tools" }});
+    }
   };
   const handleDesignClick = () => {
-    onScroll("design");
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      onScroll("design");
+    } else {
+      // If on another page, navigate to home page
+      navigate("/", { state: { scrollTo: "design" }});
+    }
   };
 
 

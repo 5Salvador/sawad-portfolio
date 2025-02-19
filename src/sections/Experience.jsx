@@ -27,6 +27,7 @@ const experiences = [
 
 const Experience = () => {
   return (
+    <> 
     <motion.div
       initial={{ opacity: 0, y: -100 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -72,6 +73,7 @@ const Experience = () => {
         </div>
       </div>
     </motion.div>
+    </>
   );
 };
 
